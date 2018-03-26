@@ -1,13 +1,14 @@
-import React from 'react';
-import "./Form.css";
+import React from 'react'
+import './Form.css';
 
-const form = () => {
+
+const form = (props) => {
   return (
-    <form className="form">
-      <input type="text" placeholder="Search Movie Name"/>
-      <button>Add to collection</button>
-    </form>
+    <div>
+      <input type= 'text' placeholder = 'enter movie here' onChange={props.setMovie} value={props.value}/>
+        <button onClick={()=> props.addMovie(props.value)}>add</button> 
+    </div>
   )
 }
 
-export default form
+export default form;

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import MovieList from '../../components/MovieList/MovieList';
 import Form from '../../components/Form/Form';
+import Movie from '../../components/Movie/Movie'
 import axios from 'axios';
 
 
@@ -33,10 +34,10 @@ class MovieDatabase extends Component {
   // }
 
   addMovie1 = (event) => {
-    const newMovie = [...this.state.movie]
+    const newMovie = []
     axios.get(`https://api.themoviedb.org/3/movie/${this.state.movieName}?&api_key=c14f219f034f43147391971bf0c07ba4`)
     .then(response=> {
-      newMovie.push(response.data)
+      newMovie.splice(0,1,response.data)
       this.setState({
         movie: newMovie
       });
@@ -68,6 +69,7 @@ class MovieDatabase extends Component {
     return (
       <div>
         <Form setMovie= {this.setMovie} value={this.state.movieName} addMovie={this.addMovie1}/>
+        <Movie value={this.state.movie}/>
         <MovieList 
             movies={this.state.movies}
             delete={this.deleteMovie} />

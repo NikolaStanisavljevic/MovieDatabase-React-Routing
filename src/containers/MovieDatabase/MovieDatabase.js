@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import MovieList from '../../components/MovieList/MovieList';
 import Form from '../../components/Form/Form';
+import axios from 'axios';
 
 
 
@@ -10,25 +11,38 @@ class MovieDatabase extends Component {
     movies : [
       { name: 'Movie1', id: 'some date' }
     ],
+    movie: [],
     movieName : ''
   }
 
-  addMovie = (movie) => {
-    const newMovies = [...this.state.movies]
-    if (movie.length > 0) {
-        newMovies.push({ name: movie, id:  new Date() })
-        this.setState({
-          movies: newMovies
-        })
-        this.setState({
-          movieName: ''
-        })
-    } else {
+  // addMovie = (movie) => {
+  //   const newMovies = [...this.state.movies]
+  //   if (movie.length > 0) {
+  //       newMovies.push({ name: movie, id:  new Date() })
+  //       this.setState({
+  //         movies: newMovies
+  //       })
+  //       this.setState({
+  //         movieName: ''
+  //       })
+  //   } else {
+  //     this.setState({
+  //       movies: newMovies
+  //     })
+  //   }   
+  // }
+
+  addMovie1 = (event) => {
+    const newMovie = [...this.state.movie]
+    axios.get(`https://api.themoviedb.org/3/movie/${this.state.movieName}?&api_key=c14f219f034f43147391971bf0c07ba4`)
+    .then(response=> {
+      newMovie.push(response.data)
       this.setState({
-        movies: newMovies
-      })
-    }   
+        movie: newMovie
+      });
+    })
   }
+
 
   setMovie = (event) => {
     this.setState({
@@ -53,7 +67,7 @@ class MovieDatabase extends Component {
     
     return (
       <div>
-        <Form setMovie= {this.setMovie} value={this.state.movieName} addMovie={this.addMovie}/>
+        <Form setMovie= {this.setMovie} value={this.state.movieName} addMovie={this.addMovie1}/>
         <MovieList 
             movies={this.state.movies}
             delete={this.deleteMovie} />

@@ -32,12 +32,12 @@ class MovieDatabase extends Component {
   //     })
   //   }   
   // }
-
+  // axios.get(`https://api.themoviedb.org/3/movie/${this.state.movieName}?&api_key=c14f219f034f43147391971bf0c07ba4`)
   addMovie1 = (event) => {
     const newMovie = []
-    axios.get(`https://api.themoviedb.org/3/movie/${this.state.movieName}?&api_key=c14f219f034f43147391971bf0c07ba4`)
+    axios.get(`https://api.themoviedb.org/3/search/movie?api_key=c14f219f034f43147391971bf0c07ba4&language=en-US&query=${this.state.movieName}&page=1&include_adult=false`)
     .then(response=> {
-      newMovie.splice(0,1,response.data)
+      newMovie.splice(0,1,response.data.results[0])
       this.setState({
         movie: newMovie
       });

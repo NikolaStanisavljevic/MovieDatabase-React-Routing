@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+import './MovieDatabase.css';
 import MovieList from '../../components/MovieList/MovieList';
 import Form from '../../components/Form/Form';
-import Movie from '../../components/Movie/Movie'
+import Movie from '../../components/Movie/Movie';
+import NavBar from '../../components/Navbar/Navbar';
 import axios from 'axios';
 
 
@@ -9,37 +11,41 @@ import axios from 'axios';
 class MovieDatabase extends Component {
 
   state = {
-    movies : [
-      { name: 'Movie1', id: 'some date' }
-    ],
+    movies : [],
     movie: [],
-    movieName : ''
+    movieName : '',
+    collection: false
   }
 
-  // addMovie = (movie) => {
-  //   const newMovies = [...this.state.movies]
-  //   if (movie.length > 0) {
-  //       newMovies.push({ name: movie, id:  new Date() })
-  //       this.setState({
-  //         movies: newMovies
-  //       })
-  //       this.setState({
-  //         movieName: ''
-  //       })
-  //   } else {
-  //     this.setState({
-  //       movies: newMovies
-  //     })
-  //   }   
-  // }
-  // axios.get(`https://api.themoviedb.org/3/movie/${this.state.movieName}?&api_key=c14f219f034f43147391971bf0c07ba4`)
-  addMovie1 = (event) => {
+  componentWillMount() {
+    const newMovie = []
+    axios.get(`https://api.themoviedb.org/3/search/movie?api_key=c14f219f034f43147391971bf0c07ba4&language=en-US&query=Matrix&page=1&include_adult=false`)
+    .then(response=>{
+      newMovie.push(response.data.results[0])
+      this.setState({
+        movie:newMovie
+      });
+    });
+    
+  }
+
+
+  addMovie = (movie) => {
+    const newMovies =[...this.state.movies];
+    newMovies.push(this.state.movie);
+    this.setState({
+      movies: newMovies
+    });
+  }
+
+  searchMovie = (event) => {
     const newMovie = []
     axios.get(`https://api.themoviedb.org/3/search/movie?api_key=c14f219f034f43147391971bf0c07ba4&language=en-US&query=${this.state.movieName}&page=1&include_adult=false`)
     .then(response=> {
       newMovie.splice(0,1,response.data.results[0])
       this.setState({
-        movie: newMovie
+        movie: newMovie,
+        movieName: ''
       });
     })
   }
@@ -67,13 +73,16 @@ class MovieDatabase extends Component {
   render () {
     
     return (
-      <div>
-        <Form setMovie= {this.setMovie} value={this.state.movieName} addMovie={this.addMovie1}/>
-        <Movie value={this.state.movie}/>
-        <MovieList 
-            movies={this.state.movies}
-            delete={this.deleteMovie} />
+      <div className="movieDatabase">
+          <NavBar />
+          <Form setMovie= {this.setMovie} value={this.state.movieName} searchMovie={this.searchMovie}/>
+          <Movie value={this.state.movie} addMovie={this.addMovie}/>
+          {/* <MovieList 
+              movies={this.state.movies}
+              delete={this.deleteMovie} /> */}
+            
       </div>
+     
     )
   }
 }

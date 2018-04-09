@@ -1,3 +1,14 @@
-.movieList > li {
-    margin-top: 15px;
+.movies {
+    position: relative;
+    width: 400px;
+    height: 200px;
+    
+}
+
+.movies > img {
+    position: absolute;
+    width: 400px;
+    height: 200px;
+    left: 0;
+    top: 0;
 }

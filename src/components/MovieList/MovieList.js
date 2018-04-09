@@ -4,9 +4,14 @@ import './MovieList.css';
 const movieList = (props) => {
     return (
         <div className= 'movieList'>
-            {props.movies.map( ({name,id,original_title}) => {
+            {props.movies.map( ([{title,poster_path}]) => {
                 return (
-                    <li className='list' key={id} onClick={() => props.delete(id)}>{name}{original_title}</li>
+                    <div className='movies'>
+                    <p>{title}</p>
+                    <img src={'https://image.tmdb.org/t/p/w500' + poster_path} alt="poster"/>
+                    </div> 
+                    
+                    
                 )
             }
             )}

@@ -1,0 +1,33 @@
+.nav {
+    z-index: 999;
+    background-color: black;
+    display: block;
+}
+
+.nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    text-align: end;
+    z-index: 3;
+    margin-top:23px; 
+}
+
+.nav li {
+    display: inline-block;
+    margin: 20px;
+    z-index: 3;
+    color:#e6df44;
+    font-size: 30px;
+    z-index: 3;
+}
+
+.nav li:last-child {
+    margin-right: 150px;
+}
+
+.nav li:hover {
+    cursor: pointer;
+}
+

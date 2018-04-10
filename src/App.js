@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
 import './App.css';
-import MovieDatabase from './containers/MovieDatabase/MovieDatabase';
+import Main from './containers/Main/Main';
+import  { BrowserRouter } from 'react-router-dom';
 
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <MovieDatabase />
-      </div>
+      <BrowserRouter>
+          <div className="App">
+            <Main />
+          </div>
+      </BrowserRouter>
     );
   }
 }

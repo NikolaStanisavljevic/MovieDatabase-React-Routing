@@ -1,7 +1,9 @@
 .nav {
-    z-index: 999;
-    background-color: black;
+    z-index: 4 ;
     display: block;
+    opacity: 1;
+    position: relative;
+    font-weight: 700;
 }
 
 .nav ul {
@@ -10,17 +12,17 @@
     padding: 0;
     width: 100%;
     text-align: end;
-    z-index: 3;
-    margin-top:23px; 
+    z-index: 4;
+ 
 }
 
 .nav li {
     display: inline-block;
-    margin: 20px;
-    z-index: 3;
+    margin: 24px;
+    z-index: 4;
     color:#e6df44;
     font-size: 30px;
-    z-index: 3;
+   
 }
 
 .nav li:last-child {

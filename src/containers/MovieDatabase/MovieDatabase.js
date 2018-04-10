@@ -8,16 +8,18 @@ import axios from 'axios';
 
 
 
+
 class MovieDatabase extends Component {
 
   state = {
     movies : [],
     movie: [],
     movieName : '',
-    collection: false
+    collection: false,
+    error : false
   }
 
-  componentWillMount() {
+  componentDidMount() {
     const newMovie = []
     axios.get(`https://api.themoviedb.org/3/search/movie?api_key=c14f219f034f43147391971bf0c07ba4&language=en-US&query=Matrix&page=1&include_adult=false`)
     .then(response=>{
@@ -25,8 +27,19 @@ class MovieDatabase extends Component {
       this.setState({
         movie:newMovie
       });
-    });
+    })
+    .catch(error => {
+      this.setState({
+        error: true
+      });
+    })
     
+  }
+
+  componentDidCatch(){
+    this.setState({
+      error:true
+    });
   }
 
 
@@ -48,6 +61,12 @@ class MovieDatabase extends Component {
         movieName: ''
       });
     })
+    .catch(error => {
+      this.setState({
+        error: true
+      });
+    }
+    )
   }
 
 
@@ -71,20 +90,25 @@ class MovieDatabase extends Component {
    
 
   render () {
-    
+   if(this.state.error) {
+     return (
+      <div className="movieDatabase">
+      <NavBar />
+      <Form setMovie= {this.setMovie} value={this.state.movieName} searchMovie={this.searchMovie}/>
+      <p>Something went wrong please try other movie name</p>
+      </div>
+     )
+   } else {
     return (
       <div className="movieDatabase">
           <NavBar />
           <Form setMovie= {this.setMovie} value={this.state.movieName} searchMovie={this.searchMovie}/>
-          <Movie value={this.state.movie} addMovie={this.addMovie}/>
-          {/* <MovieList 
-              movies={this.state.movies}
-              delete={this.deleteMovie} /> */}
-            
+          <Movie value={this.state.movie} addMovie={this.addMovie} error={this.state.error}/>      
       </div>
      
     )
   }
+}
 }
 
 export default MovieDatabase;

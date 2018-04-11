@@ -1,0 +1,21 @@
+.collections {
+    display: flex;
+    padding-top: 5%;
+    width: 80%;
+    margin: 0 auto;
+    flex-flow: wrap; 
+}
+
+.collection > img {
+    height: 200px;    
+}
+
+.collection {
+    margin:10px;
+    transition: all .3s;
+}
+
+.collection:hover {
+    transform: scale(2);
+    z-index: 99;
+}

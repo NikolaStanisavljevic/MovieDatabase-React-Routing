@@ -7,11 +7,13 @@
 }
 
 .collection > img {
-    height: 200px;    
+    height: 200px;
+    border-radius:3px;  
+    box-shadow: 13px 11px 36px 6px rgba(0,0,0,0.75);   
 }
 
 .collection {
-    margin:10px;
+    margin:10px 25px;
     transition: all .3s;
 }
 

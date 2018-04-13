@@ -3,7 +3,6 @@
     display: block;
     opacity: 1;
     position: relative;
-    font-weight: 700;
 }
 
 .nav ul {
@@ -18,10 +17,13 @@
 
 .nav li {
     display: inline-block;
-    margin: 24px;
+    margin: 34px 25px 0;
     z-index: 4;
     color:#e6df44;
-    font-size: 30px;
+    font-size: 15px;
+    background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+    border-radius: 10px;
+    border: 13px solid #555;
    
 }
 
@@ -31,5 +33,22 @@
 
 .nav li:hover {
     cursor: pointer;
+    background-image: linear-gradient(to top, #0fa8a8b6 0%, #2c075ad0 100%);
 }
+
+nav li> a:active {
+    transform: translateX(2px);
+}
+
+.nav li > a {
+    color: white;
+    display: inline-block;
+    font-weight: bold;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 13px 35px;
+    border-radius: 10px;
+}   
+
+
 

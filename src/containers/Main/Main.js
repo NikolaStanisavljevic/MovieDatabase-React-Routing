@@ -15,7 +15,7 @@ class Main extends Component {
 
   componentDidMount() {
     const newMovie = []
-    axios.get(`https://api.themoviedb.org/3/search/movie?api_key=c14f219f034f43147391971bf0c07ba4&language=en-US&query=Matrix&page=1&include_adult=false`)
+    axios.get(`https://api.themoviedb.org/3/search/movie?api_key=c14f219f034f43147391971bf0c07ba4&language=en-US&query=Inferno&page=1&include_adult=false`)
     .then(response=>{
       newMovie.push(response.data.results[0])
       this.setState({
@@ -56,18 +56,6 @@ class Main extends Component {
     )
   }
 
-  eleteMovie = (id) => {
-    const newMovies = [...this.state.movies]
-    for(let i=0; i < newMovies.length; i++){
-      if(newMovies[i].id === id) {
-        newMovies.splice(i, 1)
-      }
-    }
-    this.setState({
-      movies: newMovies
-    })
-  }
-
 
   setMovie = (event) => {
     this.setState({
@@ -76,20 +64,23 @@ class Main extends Component {
   }
 
   render() {
-    return (
-      <div>
-          <Route path="/" exact render={()=><MovieDatabase 
-                    error={this.state.error} 
-                    movies={this.state.movies}
-                    movie={this.state.movie}
-                    movieName={this.state.movieName}
-                    setMovie={this.setMovie}
-                    searchMovie={this.searchMovie}
-                    addMovie={this.addMovie}/>} />
 
-          <Route path="/collection" exact render={()=><Collection  
-                    movies={this.state.movies}/>} />
-      </div>
+    return (
+
+        <div>
+            <Route path="/" exact render={()=><MovieDatabase 
+                      error={this.state.error} 
+                      movies={this.state.movies}
+                      movie={this.state.movie}
+                      movieName={this.state.movieName}
+                      setMovie={this.setMovie}
+                      searchMovie={this.searchMovie}
+                      addMovie={this.addMovie}/>} />
+
+            <Route path="/collection" exact render={()=><Collection  
+                      movies={this.state.movies}
+                      delete={this.deleteMovie}/>} />
+        </div>
     )
   }
 }

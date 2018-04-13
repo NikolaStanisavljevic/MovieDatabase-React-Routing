@@ -22,6 +22,8 @@
     display: block;
     position: relative;
     margin: 3% auto;
+    box-shadow: 13px 11px 36px 6px rgba(0,0,0,0.75);
+    
 }
 
 .stats {
@@ -35,6 +37,7 @@
     z-index: 2;
     color:white;
     background-color:rgba(0,0,0,.85) ;
+    border-radius: 0 3px 3px 0;
     
 }
 
@@ -47,6 +50,7 @@
     left: 0;
     z-index: 2;
     border-radius: 4px;
+    
 }
 
 .image > img {
@@ -55,14 +59,20 @@
     left: 0;
     background-size: cover; 
     z-index: 2;
+    border-radius:  3px 0 0 3px;
 }
 
 .title {
-    margin-top: 50px;   
+    margin-top: 30px;   
 }
 
 .title > h1 {
-    color: #e6df44;
+    background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+    display: inline-block;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    margin: 20px 0 0 0 ;
 }
 
 .overview {
@@ -70,7 +80,11 @@
 }
 
 .overview > h2 {
-    color: #e6df44;
+    background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+    display: inline-block;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
 
 .overview > p {
@@ -82,7 +96,11 @@
 }
 
 .date > h2 {
-    color: #e6df44;
+    background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+    display: inline-block;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
 
 .vote {
@@ -90,7 +108,10 @@
 }
 
 .vote > h2 {
-    color: #e6df44;
+    background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+    display: inline-block;
+    -webkit-background-clip: text;
+    color: transparent;
 }
 
 .add {
@@ -99,15 +120,21 @@
 
 
 .add > button {
-    background-color: #e6df44;
+    background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
     padding: 10px;
     font-size: 16px;
-    width: 145px;
-    border-radius: 29px;
+    width: 170px;
+    border-radius: 10px;
     transition: all .2s;
     outline: none;
     cursor: pointer;
     transition: all .2s;
+    color: white;
+    font-weight: bold;
+}
+
+.add button:hover{
+    background-image: linear-gradient(to top, #0fa8a8b6 0%, #2c075ad0 100%);
 }
 
 .add > button:active {

@@ -14,6 +14,8 @@ class MovieDatabase extends Component {
 
   render () {
 
+  // Handling bad get request and display error message
+
    if(this.props.error) {
      return (
       <div className="movieDatabase">

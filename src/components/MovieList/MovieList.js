@@ -2,6 +2,9 @@ import React from 'react';
 import './MovieList.css';
 
 const movieList = (props) => {
+
+    // Display added movies on second page
+    
     return (
         <div className= 'collection'>
             {this.props.movies.map( ([{title,poster_path}]) => {

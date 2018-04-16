@@ -13,6 +13,8 @@ class Main extends Component {
     error : false
   }
 
+  // Get starting screen point (movie)
+
   componentDidMount() {
     const newMovie = []
     axios.get(`https://api.themoviedb.org/3/search/movie?api_key=c14f219f034f43147391971bf0c07ba4&language=en-US&query=Inferno&page=1&include_adult=false`)
@@ -29,6 +31,8 @@ class Main extends Component {
     })
     
   }
+
+  // Handling user input on search button
 
   addMovie = (movie) => {
     const newMovies =[...this.state.movies];
@@ -56,6 +60,7 @@ class Main extends Component {
     )
   }
 
+  // Storing user value of input field
 
   setMovie = (event) => {
     this.setState({
@@ -66,6 +71,8 @@ class Main extends Component {
   render() {
 
     return (
+      
+        // Passing props via react router
 
         <div>
             <Route path="/" exact render={()=><MovieDatabase 

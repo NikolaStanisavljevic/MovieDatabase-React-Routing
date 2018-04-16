@@ -23,8 +23,21 @@
     position: relative;
     margin: 3% auto;
     box-shadow: 13px 11px 36px 6px rgba(0,0,0,0.75);
+    animation-name: cardAnimation;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-out;
     
 }
+
+@keyframes cardAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+} 
+
 
 .stats {
     border: 1px solid black;

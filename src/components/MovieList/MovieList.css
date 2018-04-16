@@ -3,6 +3,7 @@
     width: 400px;
     height: 200px;
     
+    
 }
 
 .movies > img {
@@ -11,4 +12,5 @@
     height: 200px;
     left: 0;
     top: 0;
+    
 }

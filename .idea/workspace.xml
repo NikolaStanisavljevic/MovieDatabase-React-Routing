@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3aaad0aa-d436-4d1e-ad6a-47cfc071d917" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/containers/Main/Main.js" afterPath="$PROJECT_DIR$/src/containers/Main/Main.js" />
+      <change beforePath="$PROJECT_DIR$/src/containers/Main/MovieDatabase/MovieDatabase.js" afterPath="$PROJECT_DIR$/src/containers/Main/MovieDatabase/MovieDatabase.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -23,14 +23,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Main.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Main.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/containers/Main/Main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="426">
+            <state relative-caret-position="3594">
               <caret line="185" column="0" lean-forward="true" selection-start-line="185" selection-start-column="0" selection-end-line="185" selection-end-column="0" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MovieDatabase.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/containers/Main/MovieDatabase/MovieDatabase.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="22">
+              <caret line="1" column="29" lean-forward="false" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="29" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -45,6 +55,7 @@
       <list>
         <option value="$PROJECT_DIR$/src/containers/Main/Main.css" />
         <option value="$PROJECT_DIR$/src/containers/Main/Main.js" />
+        <option value="$PROJECT_DIR$/src/containers/Main/MovieDatabase/MovieDatabase.js" />
       </list>
     </option>
   </component>
@@ -112,6 +123,14 @@
               <item name="containers" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Main" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
+            <path>
+              <item name="movie-database-redux" type="b2602c69:ProjectViewProjectNode" />
+              <item name="movie-database-redux" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="containers" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Main" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="MovieDatabase" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -149,12 +168,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1525607312121</updated>
-      <workItem from="1525607313723" duration="425000" />
+      <workItem from="1525607313723" duration="684000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="425000" />
+    <option name="totallyTimeSpent" value="684000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -210,11 +229,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/containers/Main/Main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="426">
+        <state relative-caret-position="3594">
           <caret line="185" column="0" lean-forward="true" selection-start-line="185" selection-start-column="0" selection-end-line="185" selection-end-column="0" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/containers/Main/MovieDatabase/MovieDatabase.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="1" column="29" lean-forward="false" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="29" />
+          <folding />
         </state>
       </provider>
     </entry>

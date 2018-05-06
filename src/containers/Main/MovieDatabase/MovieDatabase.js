@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import './MovieDatabase.css';
-import Form from '../../../components/Form/Form';
 import Movie from '../../../components/Movie/Movie';
 import NavBar from '../../../components/Navbar/Navbar';
 import Collection from '../Collection/Collection';
+import SearchButton from '../../../components/SearchButton/SearchButton';
 
 
 
@@ -19,7 +19,7 @@ class MovieDatabase extends Component {
      return (
       <div className="movieDatabase">
       <NavBar />
-      <Form setMovie= {this.props.setMovie} value={this.props.movieName} searchMovie={this.props.searchMovie}/>
+      <SearchButton  value={this.props.movieName} searchMovie={this.props.searchMovie}/>
       <p>Something went wrong please try other movie name</p>
       <Collection state={this.props.movies}/>    
       </div>
@@ -28,7 +28,7 @@ class MovieDatabase extends Component {
     return (
       <div className="movieDatabase">
           <NavBar />
-          <Form setMovie= {this.props.setMovie} value={this.props.movieName} searchMovie={this.props.searchMovie}/>
+          <SearchButton  value={this.props.movieName} searchMovie={this.props.searchMovie}/>
           <Movie value={this.props.movie} addMovie={this.props.addMovie} error={this.props.error}/> 
            
       </div>

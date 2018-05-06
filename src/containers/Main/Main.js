@@ -11,12 +11,12 @@ class Main extends Component {
     movie: [],
     movieName : '',
     error : false
-  }
+  };
 
   // Get starting screen point (movie)
 
   componentDidMount() {
-    const newMovie = []
+    const newMovie = [];
     axios.get(`https://api.themoviedb.org/3/search/movie?api_key=c14f219f034f43147391971bf0c07ba4&language=en-US&query=Inferno&page=1&include_adult=false`)
     .then(response=>{
       newMovie.push(response.data.results[0])
@@ -40,13 +40,13 @@ class Main extends Component {
     this.setState({
       movies: newMovies
     });
-  }
+  };
 
   searchMovie = (event) => {
-    const newMovie = []
+    const newMovie = [];
     axios.get(`https://api.themoviedb.org/3/search/movie?api_key=c14f219f034f43147391971bf0c07ba4&language=en-US&query=${this.state.movieName}&page=1&include_adult=false`)
     .then(response=> {
-      newMovie.splice(0,1,response.data.results[0])
+      newMovie.splice(0,1,response.data.results[0]);
       this.setState({
         movie: newMovie,
         movieName: ''
@@ -58,7 +58,7 @@ class Main extends Component {
       });
     }
     )
-  }
+  };
 
   // Storing user value of input field
 
@@ -66,7 +66,7 @@ class Main extends Component {
     this.setState({
       movieName: event.target.value
     })
-  }
+  };
 
   render() {
 

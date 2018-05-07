@@ -118,14 +118,17 @@
 
 .vote {
     margin-top: 40px;
+
 }
 
 .vote > h2 {
     background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
-    display: inline-block;
+    display: block;
     -webkit-background-clip: text;
     color: transparent;
 }
+
+
 
 .add {
     margin-top: 40px;

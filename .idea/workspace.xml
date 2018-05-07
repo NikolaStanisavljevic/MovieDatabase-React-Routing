@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="3aaad0aa-d436-4d1e-ad6a-47cfc071d917" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" afterPath="$PROJECT_DIR$/public/index.html" />
       <change beforePath="$PROJECT_DIR$/src/components/Movie/Movie.css" afterPath="$PROJECT_DIR$/src/components/Movie/Movie.css" />
-      <change beforePath="$PROJECT_DIR$/src/components/Movie/Movie.js" afterPath="$PROJECT_DIR$/src/components/Movie/Movie.js" />
-      <change beforePath="$PROJECT_DIR$/src/containers/Main/Main.js" afterPath="$PROJECT_DIR$/src/containers/Main/Main.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -44,8 +41,8 @@
       <file leaf-file-name="Movie.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/Movie/Movie.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2313">
-              <caret line="188" column="0" lean-forward="true" selection-start-line="188" selection-start-column="0" selection-end-line="188" selection-end-column="0" />
+            <state relative-caret-position="336">
+              <caret line="125" column="13" lean-forward="false" selection-start-line="125" selection-start-column="13" selection-end-line="125" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -85,8 +82,8 @@
         <option value="$PROJECT_DIR$/src/containers/Main/MovieDatabase/MovieDatabase.js" />
         <option value="$PROJECT_DIR$/src/containers/Main/Main.js" />
         <option value="$PROJECT_DIR$/public/index.html" />
-        <option value="$PROJECT_DIR$/src/components/Movie/Movie.css" />
         <option value="$PROJECT_DIR$/src/components/Movie/Movie.js" />
+        <option value="$PROJECT_DIR$/src/components/Movie/Movie.css" />
       </list>
     </option>
   </component>
@@ -102,7 +99,7 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-11" />
     <option name="y" value="1" />
     <option name="width" value="1931" />
@@ -186,15 +183,15 @@
       <option name="presentableId" value="Default" />
       <updated>1525607312121</updated>
       <workItem from="1525607313723" duration="2843000" />
-      <workItem from="1525710995371" duration="863000" />
+      <workItem from="1525710995371" duration="1619000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3706000" />
+    <option name="totallyTimeSpent" value="4462000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2510661" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -320,8 +317,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Movie/Movie.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2313">
-          <caret line="188" column="0" lean-forward="true" selection-start-line="188" selection-start-column="0" selection-end-line="188" selection-end-column="0" />
+        <state relative-caret-position="336">
+          <caret line="125" column="13" lean-forward="false" selection-start-line="125" selection-start-column="13" selection-end-line="125" selection-end-column="13" />
           <folding />
         </state>
       </provider>

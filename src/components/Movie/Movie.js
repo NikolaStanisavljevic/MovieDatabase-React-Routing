@@ -5,9 +5,17 @@ const movie = (props) => {
     
     let movie =<p style={{ textAlign: 'center' }}>Something went wrong!</p>;
 
+
+
     if(!props.error) {
 
         movie = props.value.map( ({ title, overview, poster_path, backdrop_path,release_date,vote_average})=>{
+
+            const precent = `${Math.round(vote_average)*10}%`;
+            const style= {
+                width: `${precent}`
+            };
+
             return (
                 <div className="content" key={title}>
                 <div className='card'>
@@ -32,6 +40,11 @@ const movie = (props) => {
                         
                         <div className="vote">
                             <h2>Rating:</h2>
+                            <div className="outer">
+                                <div className="iner" style={style}>
+
+                                </div>
+                            </div>
                             <p>{vote_average}</p>
                         </div>
 

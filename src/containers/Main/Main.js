@@ -28,7 +28,8 @@ const getSuggestionValue = suggestion => suggestion;
 
 // Use your imagination to render suggestions.
 const renderSuggestion = suggestion => (
-    <div className='suggest'>
+
+    <div>
         {suggestion}
     </div>
 );
@@ -170,7 +171,7 @@ class Main extends Component {
                     movies={this.state.movies}
                     delete={this.deleteMovie}/>} />
 
-                <Autosuggest  suggestions={suggestions}
+                <Autosuggest  suggestions={suggestions.slice(0,6)}
                               onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
                               onSuggestionsClearRequested={this.onSuggestionsClearRequested}
                               getSuggestionValue={getSuggestionValue}

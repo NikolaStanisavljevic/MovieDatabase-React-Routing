@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import MovieDatabase from './MovieDatabase/MovieDatabase';
 import Collection from './Collection/Collection';
+import ComingSoon from './ComingSoon/ComingSoon';
 import {Route} from 'react-router-dom';
 import axios from 'axios';
 import Autosuggest from 'react-autosuggest';
@@ -12,6 +13,7 @@ const movies = [];
 const moviesName = [];
 
 // Teach Autosuggest how to calculate suggestions for any given input value.
+
 const getSuggestions = value => {
     const inputValue = value.trim().toLowerCase();
     const inputLength = inputValue.length;
@@ -24,9 +26,11 @@ const getSuggestions = value => {
 // When suggestion is clicked, Autosuggest needs to populate the input
 // based on the clicked suggestion. Teach Autosuggest how to calculate the
 // input value for every given suggestion.
+
 const getSuggestionValue = suggestion => suggestion;
 
 // Use your imagination to render suggestions.
+
 const renderSuggestion = suggestion => (
 
     <div>
@@ -126,6 +130,7 @@ class Main extends Component {
 
     // Autosuggest will call this function every time you need to update suggestions.
     // You already implemented this logic above, so just use it.
+
     onSuggestionsFetchRequested = ({ value }) => {
         this.setState({
             suggestions: getSuggestions(value)
@@ -134,6 +139,7 @@ class Main extends Component {
     };
 
     // Autosuggest will call this function every time you need to clear suggestions.
+
     onSuggestionsClearRequested = () => {
         this.setState({
             suggestions: []
@@ -147,6 +153,7 @@ class Main extends Component {
         const { value, suggestions } = this.state;
 
         // Autosuggest will pass through all these props to the input.
+
         const inputProps = {
             placeholder: 'Type a movie name',
             value,
@@ -170,6 +177,8 @@ class Main extends Component {
                 <Route path="/collection" exact render={()=><Collection
                     movies={this.state.movies}
                     delete={this.deleteMovie}/>} />
+
+                <Route path='/soon' exact render={()=><ComingSoon />} />
 
                 <Autosuggest  suggestions={suggestions.slice(0,6)}
                               onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}

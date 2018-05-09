@@ -1,6 +1,5 @@
 .react-autosuggest__container {
     width: 330px;
-    height: 40px;
     padding: 15px;
     background: #555;
     border-radius: 10px;
@@ -13,8 +12,7 @@
 }
 
 .react-autosuggest__input {
-    width: 210px;
-    height: 20px;
+    width: 210px; 
     padding: 10px 5px;
     float: left;
     font: bold 15px 'Raleway', sans-serif;

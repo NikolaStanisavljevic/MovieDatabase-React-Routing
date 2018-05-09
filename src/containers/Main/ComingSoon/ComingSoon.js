@@ -41,7 +41,7 @@ if(this.state.distance > 0) {
   var countdown = (
     <div className='countdown'>
       <div>{this.state.days} <span className='span'>Days</span></div>
-      <div>{this.state.hours} <span className='span'>hours</span></div>
+      <div>{this.state.hours} <span className='span'>Hours</span></div>
       <div>{this.state.mins} <span className='span'>Mins</span></div>
       <div>{this.state.seconds} <span className='span'>Seconds</span></div>
     </div>
@@ -61,7 +61,7 @@ if(this.state.distance > 0) {
         <div className="landing-inner">
             <img src={Logo} alt="logo"/>
             <p>I am fire and life incarnate! Now and forever — I am Phoenix!</p>
-            <h1 className="comingSoon">Coming Soon</h1>
+            <h1 className="comingSoon">Time until release:</h1>
             <div>{countdown}</div>   
         </div>
       </div>

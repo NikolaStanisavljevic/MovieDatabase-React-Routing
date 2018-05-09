@@ -9,6 +9,7 @@
     background-position: center;
     height: 100vh;
     z-index: 7;
+    overflow: auto;
 }
 
 .landing-inner {
@@ -23,13 +24,16 @@
 }
 
 .landing h1 {
-    font-size: 50px;
-    color: white;
+    color: #fff;
+	text-shadow: 0px 1px 0px #999, 0px 2px 0px #888, 0px 3px 0px #777, 0px 4px 0px #666, 0px 5px 0px #555, 0px 6px 0px #444, 0px 7px 0px #333, 0px 8px 7px #001135;
+	font: 80px 'ChunkFiveRegular';
 }
 
 .landing p {
-    font-size: 25px;
     color: white;
+    color: #fff;
+	text-shadow: 0px -1px 4px white, 0px -2px 10px yellow, 0px -10px 20px #ff8000, 0px -18px 40px red;
+	font: 40px 'BlackJackRegular';
 }
 
 .countdown {
@@ -39,6 +43,8 @@
     justify-content: center;
     align-items: center;
     text-align: center;
+    text-shadow: 0px -1px 4px white, 0px -2px 10px yellow, 0px -10px 20px #ff8000, 0px -18px 40px red;
+	font: 50px 'BlackJackRegular';
 }
 
 .countdown div {
@@ -53,4 +59,54 @@
 
 .span  {
     display: block;
+}
+
+@media(max-width: 650px) {
+    .landing img {
+        width: 70%;
+    }
+
+    .landing h1 {
+        font-size: 40px;
+    }
+    .landing p {
+        font-size: 15px;
+    }
+
+    .countdown {
+        font-size: 30px;
+        flex-direction: column;
+        
+    }
+
+    .countdown div {
+        display: block;
+        width: 80%;
+        padding: 10px;
+    }
+    
+    .countdown div:first-child {
+        display: block;
+        width: 80%;
+        padding: 10px;
+    }
+}
+
+@media (max-height: 600px) {
+    img {
+        width: 20%;
+    }
+    p {
+        display: none;
+    }
+}
+
+@media (max-height: 400px) {
+    img {
+        padding-bottom: 30px;
+    }
+
+    h1 {
+        display: none;
+    }
 }

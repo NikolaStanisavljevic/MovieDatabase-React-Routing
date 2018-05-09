@@ -4,7 +4,7 @@ import './Movie.css';
 const movie = (props) => {
     
     let movie =<p style={{ textAlign: 'center' }}>Something went wrong!</p>;
-
+    
 
 
     if(!props.error) {
@@ -16,11 +16,16 @@ const movie = (props) => {
                 width: `${precent}`
             };
 
+            const style2 = {
+                backgroundImage: `'https://image.tmdb.org/t/p/w500' + ${poster_path}`
+            }
+
+           
+
             return (
                 <div className="content" key={title}>
                 <div className='card'>
-                    <div className="image">
-                        <img src={'https://image.tmdb.org/t/p/w500' + poster_path} alt="poster"/> 
+                    <div className="image" style={style2}>
                     </div>
 
                     <div className="stats">

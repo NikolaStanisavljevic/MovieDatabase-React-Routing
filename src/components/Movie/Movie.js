@@ -1,5 +1,6 @@
 import React from 'react';
 import './Movie.css';
+import image from '../../assets/images/background.jpg';
 
 const movie = (props) => {
     
@@ -16,10 +17,14 @@ const movie = (props) => {
                 width: `${precent}`
             };
 
-          
+            const style2 = {
+                backgroundImage: `url(https://image.tmdb.org/t/p/original${backdrop_path})`
+            };
+
+            
 
             return (
-                <div className="content" key={title}>
+                <div className="content" key={title} style={style2}>
                 <div className='card'>
                     <div className="image" >
                         <img src={'https://image.tmdb.org/t/p/w500' + poster_path} alt="poster"/> 
@@ -56,16 +61,11 @@ const movie = (props) => {
 
                     </div>
                     </div>
-
-                    <div className="backdrop">
-                        <img src={'https://image.tmdb.org/t/p/original'+ backdrop_path} alt="backdrop"/>
-                    </div>
-
-
                 </div>
         )
-    })
-
+    });
+  
+   
   return (
     <div>
         {movie}

@@ -8,14 +8,22 @@
     transform: translateX(-50%);
     z-index: 6;
 }
+.react-autosuggest__input::placeholder {
+    color: white;
+}
+
+.react-autosuggest__input--focused {
+    outline: none;
+}
 
 .react-autosuggest__input {
     width: 410px; 
     padding: 10px 5px;
     float: left;
     font: bold 15px 'Raleway', sans-serif;
-    border: 0;
-    background: #eee;
+    border: none ;
+    border-bottom: 2px solid white ;
+    background: transparent;
     border-radius: 3px 0 0 3px;
 }
 .react-autosuggest__suggestions-container{

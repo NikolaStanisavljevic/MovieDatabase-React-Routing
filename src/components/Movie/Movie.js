@@ -16,16 +16,13 @@ const movie = (props) => {
                 width: `${precent}`
             };
 
-            const style2 = {
-                backgroundImage: `'https://image.tmdb.org/t/p/w500' + ${poster_path}`
-            }
-
-           
+          
 
             return (
                 <div className="content" key={title}>
                 <div className='card'>
-                    <div className="image" style={style2}>
+                    <div className="image" >
+                        <img src={'https://image.tmdb.org/t/p/w500' + poster_path} alt="poster"/> 
                     </div>
 
                     <div className="stats">

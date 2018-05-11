@@ -3,13 +3,9 @@ import './MovieDatabase.css';
 import Movie from '../../../components/Movie/Movie';
 import NavBar from '../../../components/Navbar/Navbar';
 import Collection from '../Collection/Collection';
-import SearchButton from '../../../components/SearchButton/SearchButton';
-
-
 
 
 class MovieDatabase extends Component {
-
 
   render () {
 
@@ -18,20 +14,17 @@ class MovieDatabase extends Component {
    if(this.props.error) {
      return (
       <div className="movieDatabase">
-      <NavBar />
-      <SearchButton  value={this.props.movieName} searchMovie={this.props.searchMovie}/>
-      <p>Something went wrong please try other movie name</p>
-      <Collection state={this.props.movies}/>    
+        <NavBar toggle={this.props.toggle} isOpen={this.props.isOpen}/>
+        <p>Something went wrong please try other movie name</p>
+        <Collection state={this.props.movies}/>    
       </div>
      )
    } else {
-    return (
-      <div className="movieDatabase">
-          <NavBar />
-          <SearchButton  value={this.props.movieName} searchMovie={this.props.searchMovie}/>
-          <Movie value={this.props.movie} addMovie={this.props.addMovie} error={this.props.error}/> 
-           
-      </div>
+      return (
+        <div className="movieDatabase">
+            <NavBar toggle={this.props.toggle} isOpen={this.props.isOpen}/>     
+            <Movie value={this.props.movie} addMovie={this.props.addMovie} error={this.props.error}/>      
+        </div>
      
     )
   }

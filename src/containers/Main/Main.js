@@ -46,13 +46,14 @@ class Main extends Component {
         error : false,
         value: '',
         suggestions: [],
+        isOpen: false
     };
 
     // Get starting screen point (movie)
 
     componentDidMount() {
         const newMovie = [];
-        axios.get(`https://api.themoviedb.org/3/search/movie?api_key=c14f219f034f43147391971bf0c07ba4&language=en-US&query=Inferno&page=1&include_adult=false`)
+        axios.get(`https://api.themoviedb.org/3/search/movie?api_key=c14f219f034f43147391971bf0c07ba4&language=en-US&query=Moonlight&page=1&include_adult=false`)
             .then(response=>{
                 newMovie.push(response.data.results[0]);
                 this.setState({
@@ -65,6 +66,14 @@ class Main extends Component {
                 });
             })
 
+    }
+
+    //Handle navbar click
+
+    toggle = () => {
+        this.setState({
+            isOpen: !this.state.isOpen
+          });
     }
 
     // Handling user input on search button
@@ -172,13 +181,17 @@ class Main extends Component {
                     movieName={this.state.movieName}
                     setMovie={this.setMovie}
                     searchMovie={this.searchMovie}
-                    addMovie={this.addMovie}/>} />
+                    addMovie={this.addMovie}
+                    toggle={this.toggle}
+                    isOpen={this.state.isOpen}/>} />
 
                 <Route path="/collection" exact render={()=><Collection
                     movies={this.state.movies}
-                    delete={this.deleteMovie}/>} />
+                    delete={this.deleteMovie}
+                    toggle={this.toggle}
+                    isOpen={this.state.isOpen}/>} />
 
-                <Route path='/soon' exact render={()=><ComingSoon />} />
+                <Route path='/soon' exact render={()=><ComingSoon toggle={this.toggle} isOpen={this.state.isOpen}/>} />
 
                 <Autosuggest  suggestions={suggestions.slice(0,6)}
                               onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}

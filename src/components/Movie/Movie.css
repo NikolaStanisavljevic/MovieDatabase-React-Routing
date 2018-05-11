@@ -36,6 +36,8 @@
     animation-duration: 1.5s;
     animation-timing-function: ease-out;
     box-sizing: border-box;
+    border: none !important;
+    background-color: transparent !important;
     
 }
 
@@ -58,8 +60,7 @@
     top: 0;
     left: 50%;
     z-index: 2;
-    color:white;
-    background-color:rgba(0,0,0,.85) ;
+    background-color:rgba(0,0,0, .85);
     border-radius: 0 3px 3px 0;
     overflow: auto;
     
@@ -117,10 +118,15 @@
 
 .overview > p {
     padding: 20px;
+    color: white;
 }
 
 .date {
     margin-top: 40px;
+}
+
+.date p{
+    color:white;
 }
 
 .date > h2 {

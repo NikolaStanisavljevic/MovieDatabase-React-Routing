@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './ComingSoon.css';
 import Logo from '../../../assets/images/logo.png';
+import NavBar from '../../../components/Navbar/Navbar';
 
 
 
@@ -58,6 +59,7 @@ if(this.state.distance > 0) {
    
     return (
       <div className='landing'>
+      <NavBar toggle={this.props.toggle} isOpen={this.props.isOpen}/>
         <div className="landing-inner">
             <img src={Logo} alt="logo"/>
             <p>I am fire and life incarnate! Now and forever — I am Phoenix!</p>

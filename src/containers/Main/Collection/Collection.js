@@ -7,7 +7,7 @@ export class Collection extends Component {
   render() {
     return (
         <div>
-            <NavBar />
+            <NavBar toggle={this.props.toggle} isOpen={this.props.isOpen}/>
             <div className= 'collections'>  
                 {this.props.movies.map( ([{poster_path}]) => {
                     return (

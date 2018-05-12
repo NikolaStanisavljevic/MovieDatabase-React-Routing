@@ -9,7 +9,6 @@ import './Main.css';
 
 
 
-const movies = [];
 const moviesName = [];
 
 // Teach Autosuggest how to calculate suggestions for any given input value.
@@ -76,7 +75,7 @@ class Main extends Component {
           });
     }
 
-    // Handling user input on search button
+    // Add movie to collection on button click
 
     addMovie = (movie) => {
         const newMovies =[...this.state.movies];
@@ -86,23 +85,7 @@ class Main extends Component {
         });
     };
 
-    searchMovie = (event) => {
-        const newMovie = [];
-        axios.get(`https://api.themoviedb.org/3/search/movie?api_key=c14f219f034f43147391971bf0c07ba4&language=en-US&query=${this.state.value}&page=1&include_adult=false`)
-            .then(response=> {
-                newMovie.splice(0,1,response.data.results[0]);
-                this.setState({
-                    movie: newMovie,
-                    value: ''
-                });
-            })
-            .catch(error => {
-                    this.setState({
-                        error: true
-                    });
-                }
-            )
-    };
+  // Handle suggestion click
 
     onSuggestionSelected = (event,{ suggestion, suggestionValue, suggestionIndex, sectionIndex, method }) =>{
         const newMovie = [];
@@ -180,7 +163,6 @@ class Main extends Component {
                     movie={this.state.movie}
                     movieName={this.state.movieName}
                     setMovie={this.setMovie}
-                    searchMovie={this.searchMovie}
                     addMovie={this.addMovie}
                     toggle={this.toggle}
                     isOpen={this.state.isOpen}/>} />
@@ -193,7 +175,7 @@ class Main extends Component {
 
                 <Route path='/soon' exact render={()=><ComingSoon toggle={this.toggle} isOpen={this.state.isOpen}/>} />
 
-                <Autosuggest  suggestions={suggestions.slice(0,6)}
+                <Autosuggest  suggestions={suggestions.slice(0,6)} //Get the number of suggestions
                               onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
                               onSuggestionsClearRequested={this.onSuggestionsClearRequested}
                               getSuggestionValue={getSuggestionValue}

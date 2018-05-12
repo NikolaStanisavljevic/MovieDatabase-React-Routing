@@ -14,6 +14,7 @@ class ComingSoon extends Component {
     seconds: ''
   }
 
+
   render() {
 
   const launchDate = new Date('Feb 14,2019 12:00:00').getTime();
@@ -61,7 +62,7 @@ if(this.state.distance > 0) {
       <div className='landing'>
       <NavBar toggle={this.props.toggle} isOpen={this.props.isOpen}/>
         <div className="landing-inner">
-            <img src={Logo} alt="logo"/>
+            <img src={Logo} alt="logo" className='img'/>
             <p>I am fire and life incarnate! Now and forever — I am Phoenix!</p>
             <h1 className="comingSoon">Time until release:</h1>
             <div>{countdown}</div>   

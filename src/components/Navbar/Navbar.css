@@ -6,6 +6,7 @@
 
 .logo {
     color: white !important;
+    
 }
 
 .nl {
@@ -25,7 +26,20 @@ a:visited {
     color:white;
 }
 a:hover {
-    color: white;
+    text-decoration: none !important;
 }
 
+.firstNavItem {
+    margin-top: 10px;
+}
+
+@media (max-width: 550px) {
+    .logo {
+        padding: 0;
+    }
+}
+
+.navbar-nav {
+    margin-top:10px; 
+}
 

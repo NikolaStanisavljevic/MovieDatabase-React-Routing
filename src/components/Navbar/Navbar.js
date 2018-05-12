@@ -17,12 +17,12 @@ import {
 const navBar = (props) => {
 
   return (
-    <Navbar color="trasparent" dark expand="md">
+    <Navbar color="trasparent" dark expand="lg">
     <NavbarBrand  className='logo'>MovieDB</NavbarBrand>
     <NavbarToggler onClick={props.toggle} />
     <Collapse isOpen={props.isOpen} navbar>
       <Nav className="ml-auto" navbar>
-        <NavItem>
+        <NavItem >
           <Link to='/'>Home</Link>
         </NavItem>
         <NavItem>

@@ -57,7 +57,7 @@
   border-radius: 4px;
 }
 
-.image > img {
+.image>img {
   position: absolute;
   height: 100%;
   width: 100%;
@@ -72,7 +72,7 @@
   margin-top: 30px;
 }
 
-.title > h1 {
+.title>h1 {
   background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
   display: inline-block;
   -webkit-background-clip: text;
@@ -85,7 +85,7 @@
   margin-top: 50px;
 }
 
-.overview > h2 {
+.overview>h2 {
   background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
   display: inline-block;
   -webkit-background-clip: text;
@@ -93,7 +93,7 @@
   color: transparent;
 }
 
-.overview > p {
+.overview>p {
   padding: 20px;
   color: white;
 }
@@ -102,11 +102,17 @@
   margin-top: 40px;
 }
 
-.date p {
+.date>div {
   color: white;
+  padding-top: 5px;
 }
 
-.date > h2 {
+.date>div>* {
+  display: inline;
+  margin-right: 6px;
+}
+
+.date>h2 {
   background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
   display: inline-block;
   -webkit-background-clip: text;
@@ -118,7 +124,7 @@
   margin-top: 40px;
 }
 
-.vote > h2 {
+.vote>h2 {
   background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
   display: block;
   background-clip: text;
@@ -130,7 +136,7 @@
   margin-top: 40px;
 }
 
-.add > button {
+.add>button {
   background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
   padding: 10px;
   font-size: 16px;
@@ -148,7 +154,7 @@
   background-image: linear-gradient(to top, #0fa8a8b6 0%, #2c075ad0 100%);
 }
 
-.add > button:active {
+.add>button:active {
   transform: translateY(2px);
 }
 
@@ -159,6 +165,8 @@
 .outer {
   position: relative;
   display: inline-block;
+  color: white;
+  margin-top: 10px;
 }
 
 .iner {

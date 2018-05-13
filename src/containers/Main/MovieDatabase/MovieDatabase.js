@@ -1,34 +1,33 @@
-import React, { Component } from 'react';
-import './MovieDatabase.css';
-import Movie from '../../../components/Movie/Movie';
-import NavBar from '../../../components/Navbar/Navbar';
-import Collection from '../Collection/Collection';
-
+import React, { Component } from "react";
+import "./MovieDatabase.css";
+import Movie from "../../../components/Movie/Movie";
+import NavBar from "../../../components/Navbar/Navbar";
+import Collection from "../Collection/Collection";
 
 class MovieDatabase extends Component {
-
-  render () {
-
-  // Handling bad get request and display error message
-
-   if(this.props.error) {
-     return (
-      <div className="movieDatabase">
-        <NavBar toggle={this.props.toggle} isOpen={this.props.isOpen}/>
-        <p>Something went wrong please try other movie name</p>
-        <Collection state={this.props.movies}/>    
-      </div>
-     )
-   } else {
+  render() {
+    // Handling bad get request and display error message
+    if (this.props.error) {
       return (
         <div className="movieDatabase">
-            <NavBar toggle={this.props.toggle} isOpen={this.props.isOpen}/>     
-            <Movie value={this.props.movie} addMovie={this.props.addMovie} error={this.props.error}/>      
+          <NavBar toggle={this.props.toggle} isOpen={this.props.isOpen} />
+          <p>Something went wrong please try other movie name</p>
+          <Collection state={this.props.movies} />
         </div>
-     
-    )
+      );
+    } else {
+      return (
+        <div className="movieDatabase">
+          <NavBar toggle={this.props.toggle} isOpen={this.props.isOpen} />
+          <Movie
+            value={this.props.movie}
+            addMovie={this.props.addMovie}
+            error={this.props.error}
+          />
+        </div>
+      );
+    }
   }
-}
 }
 
 export default MovieDatabase;

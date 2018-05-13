@@ -112,19 +112,34 @@ class Main extends Component {
     this.setState({
       value: newValue
     });
-    axios
-      .get(
-        `https://api.themoviedb.org/3/search/movie?api_key=c14f219f034f43147391971bf0c07ba4&language=en-US&query=${
-          this.state.value
-        }&page=1&include_adult=false`
-      )
-      .then(response => {
-        const movies = response.data.results;
-        const moviesName = movies.map(name => {
-          return name.title;
+    if (this.state.value.length > 0) {
+      axios
+        .get(
+          `https://api.themoviedb.org/3/search/movie?api_key=c14f219f034f43147391971bf0c07ba4&language=en-US&query=${
+            this.state.value
+          }&page=1&include_adult=false`
+        )
+        .then(response => {
+          const movies = response.data.results;
+          const moviesName = movies.map(name => {
+            return name.title;
+          });
+          this.setState({ suggestions: moviesName });
+        })
+        .catch(error => {
+          // Error
+          if (error.response) {
+            // The request was made and the server responded with a status code
+            console.log(error.response.data);
+          } else if (error.request) {
+            // The request was made but no response was received
+            console.log(error.request);
+          } else {
+            // Something happened in setting up the request that triggered an Error
+            console.log("Error", error.message);
+          }
         });
-        this.setState({ suggestions: moviesName });
-      });
+    }
   };
 
   // Autosuggest will call this function every time you need to update suggestions.

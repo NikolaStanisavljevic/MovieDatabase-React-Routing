@@ -6,25 +6,67 @@ const movie = props => {
 
   if (!props.error) {
     movie = props.value.map(
-      ({
-        title,
-        overview,
-        poster_path,
-        backdrop_path,
-        release_date,
-        vote_average
-      }) => {
+      ({ overview, poster_path, backdrop_path, release_date, vote_average, title }) => {
         const precent = `${Math.round(vote_average) * 10}%`;
+        const date = release_date
+          .split("-")
+          .reverse()
+          .map((month, index) => {
+            if (index === 1) {
+              switch (month) {
+                case "01":
+                  month = "January";
+                  break;
+                case "02":
+                  month = "February";
+                  break;
+                case "03":
+                  month = "March";
+                  break;
+                case "04":
+                  month = "April";
+                  break;
+                case "05":
+                  month = "May";
+                  break;
+                case "06":
+                  month = "June";
+                  break;
+                case "07":
+                  month = "July";
+                  break;
+                case "08":
+                  month = "Avgust";
+                  break;
+                case "09":
+                  month = "Septembar";
+                  break;
+                case "10":
+                  month = "October";
+                  break;
+                case "11":
+                  month = "November";
+                  break;
+                case "12":
+                  month = "December";
+                  break;
+                default:
+                  month = "Month name";
+              }
+            }
+            return <div key={index}> {month} </div>;
+          });
+
         const style = {
           width: `${precent}`
         };
 
-        const style2 = {
+        const backgroundUrl = {
           backgroundImage: `url(https://image.tmdb.org/t/p/original${backdrop_path})`
         };
 
         return (
-          <div className="content" key={title} style={style2}>
+          <div className="content" key={title} style={backgroundUrl}>
             <div className="card">
               <div className="image">
                 <img
@@ -45,7 +87,7 @@ const movie = props => {
 
                 <div className="date">
                   <h2>Release date:</h2>
-                  <p>{release_date}</p>
+                  <div>{date}</div>
                 </div>
 
                 <div className="vote">
@@ -53,7 +95,7 @@ const movie = props => {
                   <div className="outer">
                     <div className="iner" style={style} />
                   </div>
-                  <p>{vote_average}</p>
+                  <p style={{ color: "white", marginTop: "10px" }}>{vote_average}</p>
                 </div>
 
                 <div className="add">

@@ -1,0 +1,43 @@
+@import '../../shared';
+
+.navbar {
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.logo {
+  color: $color-white !important;
+}
+
+.nl {
+  cursor: pointer;
+  font: $color-white;
+}
+
+a {
+  padding: 0 15px;
+  text-decoration: none;
+  cursor: pointer;
+  color: gray;
+  &:visited {
+    text-decoration: none;
+    color: $color-white;
+  }
+  &:hover {
+    text-decoration: none !important;
+  }
+}
+
+.firstNavItem {
+  margin-top: 10px;
+}
+
+.navbar-nav {
+  margin-top: 10px;
+}
+
+@media (max-width: 550px) {
+  .logo {
+    padding: 0;
+  }
+}

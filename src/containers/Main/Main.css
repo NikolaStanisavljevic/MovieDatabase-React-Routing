@@ -3,20 +3,23 @@
   padding: 15px;
   border-radius: 10px;
   position: absolute;
+  transform: translateX(-50%);
   left: 50%;
   top: 0;
-  transform: translateX(-50%);
-  z-index: 6;
-}
+  z-index: 6; }
+  @media only screen and (max-width: 68.1em) {
+    .react-autosuggest__container {
+      width: 332px; } }
+  @media only screen and (max-width: 34.4em) {
+    .react-autosuggest__container {
+      width: 180px; } }
 
 .react-autosuggest__input::placeholder {
-  color: white;
-}
+  color: #fff; }
 
 .react-autosuggest__input--focused {
   outline: none;
-  color: white;
-}
+  color: #fff; }
 
 .react-autosuggest__input {
   width: 410px;
@@ -24,68 +27,48 @@
   float: left;
   font: bold 15px "Raleway", sans-serif;
   border: none;
-  border-bottom: 2px solid white;
+  border-bottom: 2px solid #fff;
   background: transparent;
   border-radius: 3px 0 0 3px;
-  color: white;
-}
+  color: #fff; }
+  @media only screen and (max-width: 68.1em) {
+    .react-autosuggest__input {
+      width: 300px; } }
+  @media only screen and (max-width: 34.4em) {
+    .react-autosuggest__input {
+      width: 180px; } }
 
 .react-autosuggest__suggestions-container {
   width: 420px;
-  background: #eee;
-}
+  background: #eee; }
+  @media only screen and (max-width: 68.1em) {
+    .react-autosuggest__suggestions-container {
+      width: 300px; } }
+  @media only screen and (max-width: 34.4em) {
+    .react-autosuggest__suggestions-container {
+      width: 180px; } }
 
 .react-autosuggest__suggestions-list {
   list-style: none;
   text-align: left;
   padding-left: 0;
   padding-top: 39px;
-  font: bold 15px "Raleway", sans-serif;
-}
+  font: bold 15px "Raleway", sans-serif; }
 
 .react-autosuggest__suggestion {
   padding: 10px;
-  border: 1px solid black;
+  border: 1px solid #000;
   cursor: pointer;
   animation-name: suggestAnimation;
   animation-duration: 1.8s;
-  animation-timing-function: ease-out;
-}
+  animation-timing-function: ease-out; }
 
 .react-autosuggest__suggestion:hover {
   background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
-  color: white;
-}
+  color: #fff; }
 
 @keyframes suggestAnimation {
   0% {
-    opacity: 0;
-  }
+    opacity: 0; }
   100% {
-    opacity: 1;
-  }
-}
-
-@media (max-width: 1090px) {
-  .react-autosuggest__container {
-    width: 332px;
-  }
-  .react-autosuggest__input {
-    width: 300px;
-  }
-  .react-autosuggest__suggestions-container {
-    width: 300px;
-  }
-}
-
-@media (max-width: 550px) {
-  .react-autosuggest__container {
-    width: 180px;
-  }
-  .react-autosuggest__input {
-    width: 180px;
-  }
-  .react-autosuggest__suggestions-container {
-    width: 180px;
-  }
-}
+    opacity: 1; } }

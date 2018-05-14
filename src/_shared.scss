@@ -1,0 +1,73 @@
+
+
+
+//Colors
+
+$color-white:#fff;
+$color-black:#000;
+$body-color: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+$font1: bold 15px "Raleway", sans-serif;
+
+
+
+
+//Mixins
+
+@mixin absCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+@mixin backImgProp {
+  background-size: cover;
+  background-position: center;
+}
+
+
+//MEDIA QUERY MENAGER
+
+
+
+//0-600px Phone
+//
+//600-900px Tablet portrait
+//
+//900-1200px Tablet landscape
+//
+//[1200-1800] is where normal style apply
+//
+//1800px + Big desktop
+//
+//
+//$breakpoints argument choices
+//- phone
+//- tab-port
+//- tab-land
+//- big-desktop
+//
+//ORDER: Base + typography > general layout + grid > page layout > components
+
+
+
+
+// 1em = 16px (have to convert to em coz of browser mixin compitability)
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == s-phone {
+    @media only screen and (max-width: 29.6em) { @content }; //475px
+  }
+  @if $breakpoint == phone {
+    @media only screen and (max-width: 34.4em) { @content }; //550px
+  }
+  @if $breakpoint == tab-port {
+    @media only screen and (max-width: 68.1em) { @content }; //1090px
+  }
+  @if $breakpoint == tab-land {
+    @media only screen and (max-width: 75em) { @content }; //1200px
+  }
+  @if $breakpoint == big-desktop {
+    @media only screen and (min-width: 112.5em) { @content }; //1800only screen and px
+  }
+}

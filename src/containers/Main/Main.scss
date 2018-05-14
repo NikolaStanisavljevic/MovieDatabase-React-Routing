@@ -1,0 +1,87 @@
+@import '../../shared';
+
+.react-autosuggest__container {
+  width: 410px;
+  padding: 15px;
+  border-radius: 10px;
+  position: absolute;
+  transform: translateX(-50%);
+  left: 50%;
+  top: 0;
+  z-index: 6;
+  @include respond(tab-port) {
+    width: 332px;
+  }
+  @include respond(phone) {
+    width: 180px;
+  }
+}
+
+.react-autosuggest__input::placeholder {
+  color: $color-white;
+}
+
+.react-autosuggest__input--focused {
+  outline: none;
+  color: $color-white;
+}
+
+.react-autosuggest__input {
+  width: 410px;
+  padding: 10px 5px;
+  float: left;
+  font: $font1;
+  border: none;
+  border-bottom: 2px solid $color-white;
+  background: transparent;
+  border-radius: 3px 0 0 3px;
+  color: $color-white;
+  @include respond(tab-port) {
+    width: 300px;
+  }
+  @include respond(phone) {
+    width: 180px;
+  }
+}
+
+.react-autosuggest__suggestions-container {
+  width: 420px;
+  background: #eee;
+  @include respond(tab-port) {
+    width: 300px;
+  }
+  @include respond(phone) {
+    width: 180px;
+  }
+}
+
+.react-autosuggest__suggestions-list {
+  list-style: none;
+  text-align: left;
+  padding-left: 0;
+  padding-top: 39px;
+  font: $font1;
+}
+
+.react-autosuggest__suggestion {
+  padding: 10px;
+  border: 1px solid $color-black;
+  cursor: pointer;
+  animation-name: suggestAnimation;
+  animation-duration: 1.8s;
+  animation-timing-function: ease-out;
+}
+
+.react-autosuggest__suggestion:hover {
+  background-image: $body-color;
+  color: $color-white;
+}
+
+@keyframes suggestAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

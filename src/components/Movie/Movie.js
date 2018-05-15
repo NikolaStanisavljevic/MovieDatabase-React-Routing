@@ -7,60 +7,21 @@ const movie = props => {
   if (!props.error) {
     movie = props.value.map(
       ({ overview, poster_path, backdrop_path, release_date, vote_average, title }) => {
-        const precent = `${Math.round(vote_average) * 10}%`;
-        const date = release_date
-          .split("-")
-          .reverse()
-          .map((month, index) => {
-            if (index === 1) {
-              switch (month) {
-                case "01":
-                  month = "January";
-                  break;
-                case "02":
-                  month = "February";
-                  break;
-                case "03":
-                  month = "March";
-                  break;
-                case "04":
-                  month = "April";
-                  break;
-                case "05":
-                  month = "May";
-                  break;
-                case "06":
-                  month = "June";
-                  break;
-                case "07":
-                  month = "July";
-                  break;
-                case "08":
-                  month = "Avgust";
-                  break;
-                case "09":
-                  month = "Septembar";
-                  break;
-                case "10":
-                  month = "October";
-                  break;
-                case "11":
-                  month = "November";
-                  break;
-                case "12":
-                  month = "December";
-                  break;
-                default:
-                  month = "Month name";
-              }
-            }
-            return <div key={index}> {month} </div>;
-          });
 
+        // Set inline style width for stars rating
+        const precent = `${Math.round(vote_average) * 10}%`;
         const style = {
           width: `${precent}`
         };
 
+        // Set month names instead of numbers
+        const fullDate = release_date;
+        const monthsArr = ['Januar','Februar','March','April','May','June','July','August','September','October','November','December'];
+        const [day,month,year] = fullDate.split('-').reverse();
+        const monthString = monthsArr[ month-1];
+        const date = `${day} ${monthString} ${year}`; 
+
+        //Set inline style for backdrop poster
         const backgroundUrl = {
           backgroundImage: `url(https://image.tmdb.org/t/p/original${backdrop_path})`
         };

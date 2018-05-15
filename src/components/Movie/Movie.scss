@@ -90,11 +90,7 @@
   margin-top: 40px;
   &>div {
     color: $color-white;
-    padding-top: 5px;
-    &>* {
-      display: inline;
-      margin-right: 6px;
-    }
+    padding-top: 10px;
   }
   &>h2 {
     background-image: $body-color;

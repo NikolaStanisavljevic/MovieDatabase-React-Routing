@@ -13,6 +13,7 @@ class ComingSoon extends Component {
 
   render() {
     const launchDate = new Date("Feb 14,2019 12:00:00").getTime();
+    let countdown = null;
 
     setInterval(() => {
       const now = new Date().getTime();
@@ -27,16 +28,16 @@ class ComingSoon extends Component {
       const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
       this.setState({
-        distance: distance,
-        days: days,
-        hours: hours,
-        mins: mins,
-        seconds: seconds
+        distance,
+        days,
+        hours,
+        mins,
+        seconds
       });
     }, 1000);
 
     if (this.state.distance > 0) {
-      var countdown = (
+       countdown = (
         <div className="countdown">
           <div>
             {this.state.days} <span className="span">Days</span>
